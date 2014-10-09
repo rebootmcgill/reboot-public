@@ -7,7 +7,7 @@
 	<div class="sidecontent">
 		<p>
 		{% for hour in office_hours %}
-		{{hour.get_day}} {{hour.start_time|date:"H:M"}}	- {{hour.end_time|date:"H:M"}}<br>
+		{{ hour.get_day }} {{ hour.start_time|date:"g:i" }}	- {{ hour.end_time|date:"g:i" }}<br>
 		{% endfor %}
 		</p>
 	</div>
