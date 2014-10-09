@@ -1,0 +1,22 @@
+{% extends "publicreboot/base.html" %}
+
+{% block sidebar %}
+	<div class="sideheader">
+		<h2>Recycling @ McGill</h2>
+	</div>
+
+	<div class="sidecontent">
+		<p>Are you looking to recycle McGill-owned hardware?</p>
+		<p>
+			Arrange a pickup with our partners at McGill Waste Management. 
+			We will receive any usable electronics. 
+		</p>
+		<p>
+			<a href="http://www.mcgill.ca/hwm/electronic" alt="Pickup Form"> Pickup Form</a>
+		</p>
+	</div>
+{% endblock %}
+
+{% block contents %}
+{{ flatpage.content }}
+{% endblock %}
