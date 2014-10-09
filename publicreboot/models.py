@@ -15,7 +15,7 @@ class OfficeHours(models.Model):
     day = models.PositiveSmallIntegerField(choices=DAYS, unique=True)
     
     def __str__(self):
-        return str(self.day) + ' ' + str(self.start_time) + ' - ' + str(self.end_time)
+        return str(DAYS[self.day-1][1]) + ' ' + str(self.start_time) + ' - ' + str(self.end_time)
     
     class Meta:
         ordering = ['day']
