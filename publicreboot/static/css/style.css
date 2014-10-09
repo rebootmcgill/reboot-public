@@ -1,0 +1,193 @@
+/*general style*/
+body {
+	font-family: 'Century Gothic', sans-serif;
+	padding:0px;
+	margin:0px;
+	background: #eeeeee;
+	
+}
+img {
+	border:0px;
+}
+.email {
+	color : #337712;
+}
+
+/*page-scope style*/
+#page {
+
+	max-width:850px;
+	margin-left:auto;
+	margin-right:auto;
+	width:93%;
+}
+
+#backgrounddiv {
+	max-width:1150px;
+	width:98%;
+	margin-left:auto;
+	margin-right:auto;
+	background-image:url('recycle.png');
+	background-position: top left;
+	background-repeat: no-repeat;
+	
+}
+
+
+#main, #footer, #partners {
+	background:#fff;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:20px;
+	border: 1px solid #cccccc;
+	margin:0px;
+
+	margin-bottom:20px;
+	padding-bottom:20px;
+}
+
+#header {
+	height:125px;
+	margin-left:10px;
+
+	
+}
+
+#main h2 {
+	padding:5px;
+	padding-left:0px;
+	margin:0px;
+
+}
+/*color*/
+.color, a {
+	color:#337712;
+}
+/*quiz*/
+#quiz {
+line-height:250%;
+}
+
+/*request form*/
+.donate {
+	border: 2px dotted #cccccc;
+	padding:5px;
+	max-width:575px;
+	width:70%;
+
+}
+#disclaimer {
+	display:none;
+}
+/*navigation style*/
+#nav ul {
+	
+	list-style-type:none;
+	position:relative;
+	left:365px;
+	top:-15px;
+	max-width: 55%;
+}
+.image {
+
+	position:relative;
+	top:40px;
+	padding-left:15px;
+}
+#nav ul li {
+	display:inline;
+	padding-right:5px;
+	padding-left:5px;
+	padding-bottom:5px;
+	padding-top:10px;
+	margin:5px;
+	
+	
+	
+
+}
+#nav ul li a, #partners a {
+	font-family: Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color:#337712;
+	font-weight:bold;
+	font-size:18px;
+
+
+}
+#nav ul li a:hover, #partners a:hover {
+	color:#47a619;
+}
+a:hover {
+	text-decoration: none;
+
+}
+/*partners style*/
+#partners h2 {
+	text-align:center;
+	margin:5px;
+	margin-bottom:0px;
+}
+#partners a {
+	font-size:16px;
+}
+#partners p {
+	text-align:center;
+	line-height: 1.5em;
+	padding-top:0px;
+	margin-top:3px;	
+}
+#partners p a {
+	padding-right:7px;
+	padding-left:7px;
+	padding-top:10px;
+	margin:5px;
+}
+
+/*side bar style*/
+.sideheader {
+	
+	font-weight:bold;
+	
+}
+.sideheader h2 {
+	padding:5px;
+	padding-left:0px;
+	margin:10px;
+
+	font-size: 17px;
+}
+.sidecontent {
+	font-size:13px;
+	line-height:150%;
+	padding-left:0px;
+	padding-right:10px;
+	margin-left:0px;
+
+}
+.sidecontent p {
+	margin:5px;
+	margin-left:0px;
+	padding-right:0px;
+}
+#sidebar {
+	background-color:#e8fde9;
+	float:right;
+	width:200px;
+	padding-bottom:10px;
+	margin-bottom: 25px;
+	padding-top:15px;
+	padding-left:10px;
+	margin-left:10px;
+}
+#quantity {
+	text-align: right;
+}
+#validnum {
+	color:red;
+}
+/*footer style*/
+#footer {
+	text-align:center;
+	font-size:11px;
+}
