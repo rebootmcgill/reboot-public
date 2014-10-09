@@ -12,7 +12,7 @@ class OfficeHours(models.Model):
     )
     start_time = models.TimeField()
     end_time = models.TimeField()
-    day = models.SmallPositiveIntegerField(max_length=1, choices=DAYS, unique=True)
+    day = models.PositiveSmallIntegerField(max_length=1, choices=DAYS, unique=True)
     
     def __str__(self):
         return str(self.day) + ' ' + str(self.start_time) + ' - ' + str(self.end_time)
