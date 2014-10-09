@@ -4,11 +4,11 @@ from django.db import models
 
 class OfficeHours(models.Model):
     DAYS = (
-        ('1', 'Monday'),
-        ('2', 'Tuesday'),
-        ('3', 'Wednesday'),
-        ('4', 'Thursday'),
-        ('5', 'Friday'),
+        (1, 'Monday'),
+        (2, 'Tuesday'),
+        (3, 'Wednesday'),
+        (4, 'Thursday'),
+        (5, 'Friday'),
     )
     start_time = models.TimeField()
     end_time = models.TimeField()
