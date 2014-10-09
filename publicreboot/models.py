@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class OfficeHours(models.Model)
+class OfficeHours(models.Model):
     DAYS = (
         ('1', 'Monday'),
         ('2', 'Tuesday'),
