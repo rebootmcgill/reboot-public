@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Reboot McGill</title>
+<link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+<link rel="shortcut icon" type="image/png"
+ href="{% static 'img/favicon.png'" />
+
+</head>
+<body>
+<div id ="backgrounddiv">
+<div id ="page">
+<div id="content">
+
+<div id="header">
+	<p class="image"><a href="index.html"><img src="{% static 'img/logo.png' %}" alt="Reboot" /></a></p>
+	<div id="nav">
+		<ul>
+			<li><a href="about.html">About</a></li>
+			<li><a href="hardware.php">Request Hardware</a></li>
+			<li><a href="recycling.html">Recycling</a></li>
+			<!--<li><a href="http://wiki.reboot.mcgilleus.ca/index.php/Main_Page">Wiki</a></li>-->
+		</ul>
+	</div>
+</div>
+
+<div id="main">
+	<div id="sidebar">
+	{% block sidebar %}
+	{% endblock %}
+	</div>
+{% block contents %}
+{% endblock %}
+</div>
+
+{% block extra %}
+{% endblock %}
+
+<div id = "footer">
+			<p>Design copyright Reboot McGill 2013.</p>
+
+</div>
+
+</div>
+</div>
+</div>
+</body>
+</html>

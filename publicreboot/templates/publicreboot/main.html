@@ -1,0 +1,47 @@
+{% extends "publicreboot/base.html" %}
+
+{% block sidebar %}
+	<div class="sideheader">
+		<h2>Office Hours</h2>
+	</div>
+	<div class="sidecontent">
+		<p>
+		{% for hour in office_hours %}
+		{{hour.get_day}} {{hour.start_time|time:"H:M"}}	- {{hour.end_time|time:"H:M"}}<br>
+		{% endfor %}
+		</p>
+	</div>
+	<div class="sideheader">
+		<h2>Location</h2>
+	</div>
+	<div class="sidecontent">
+		<p>
+		Room 218, Ferrier Building<br />
+		McGill Downtown Campus
+		</p>
+	</div>
+	<div class="sideheader">
+		<h2>Email Us</h2>
+	</div>
+	<div class="sidecontent">
+		<p>reboot(at)mcgilleus(dot)ca</p>
+	</div>
+{% endblock %}
+
+{% block contents %}
+{{ flatpage.content }}
+{% endblock %}
+
+{% block extra %}
+<div id="partners">
+	<h2>Our Partners</h2>
+	<p>
+	<a href="http://www.mcgill.ca/sustainability/">McGill Office of Sustainability</a>
+	<a href="http://www.mcgill.ca/hwm/">McGill Waste Management</a>
+<br />
+	<a href="http://mcgilleus.ca/">McGill Engineering Undergraduate Society</a>
+	<a href="http://www.cs.mcgill.ca/">McGill School of Computer Science</a>
+</p>
+	
+</div>
+{% endblock %}
