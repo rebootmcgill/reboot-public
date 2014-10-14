@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from machinerequests.models import Request
 from publicreboot.models import OfficeHours
-from django.views.generic import CreateView, base.TemplateView as TemplateView, DetailView
+from django.views.generic import CreateView, DetailView
+from django.views.generic.base import TemplateView
 
 # Create your views here.
 
