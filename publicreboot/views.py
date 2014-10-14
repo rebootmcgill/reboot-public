@@ -7,6 +7,7 @@ from django.views.generic import CreateView, base.TemplateView as TemplateView, 
 
 class RequestCreate(CreateView):
     model = Request
+    template_name = "publicreboot/request.html"
     fields = ['given_name', 'family_name', 'email', 'requester_type', 'faculty_and_dept', 'organization', 'preset', 'os', 'machine_use', 'need_display', 'need_mouse', 'need_keyboard', 'need_ethernet', 'extra_information', 'amount']
 
 class RecyclingView(TemplateView):

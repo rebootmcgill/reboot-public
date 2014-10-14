@@ -1,0 +1,20 @@
+{% extends "publicreboot/base.html" %}
+
+{% block sidebar %}
+	<div class="sideheader">
+		<h2>Looking for Spare Parts?</h2>
+	</div>
+
+	<div class="sidecontent">
+		<p>Reboot has a large amount of spare hardware available if you are looking to fix your own computer. Drop by during our office hours to see what's available. A list of common items can be found <a href="#">here</a>.</p>
+		<p>You may also borrow tools to work with in the office during opening hours.</p></div>
+	</div>
+{% endblock %}
+
+{% block contents %}
+	<form action="#" method="post" role="form">
+		{% csrf_token %}
+		{{ form }}
+		<button type="submit">Submit Request</button>
+	</form>
+{% endblock %}
