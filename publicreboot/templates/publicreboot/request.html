@@ -12,6 +12,9 @@
 {% endblock %}
 
 {% block contents %}
+	<p class="donate"><strong>Donations help keep Reboot running.</strong> Please consider making a donation upon receipt of your computer (cash only). Thank you for your support!</p><p>To request computer(s), please fill out this form.</p>
+<p>Note that all clients must agree to recycle their hardware responsibly.<br />
+<br />Read the full <a href="disclaimer.html">disclaimer</a>.</p>
 	<form action="#" method="post" role="form">
 		{% csrf_token %}
 		{% for field in form %}
