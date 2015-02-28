@@ -24,3 +24,9 @@ class OfficeHours(models.Model):
         ordering = ['day']
 
 
+class Holiday(models.Model):
+    start_date = models.DateField()
+    end_date = models.DateField()
+    name = models.CharField(max_length=30)
+    def __str__(self):
+        return "{1}-{2:d}".format(str(name), start_date.year)
