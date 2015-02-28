@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -28,5 +29,22 @@ class Holiday(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     name = models.CharField(max_length=30)
+
     def __str__(self):
-        return "{1}-{2:d}".format(str(name), start_date.year)
+        return "{0}-{1:d}".format(str(self.name), self.start_date.year)
+
+    def active(self):
+        today = timezone.now()
+        return today > self.start_date and today < self.end_date
+    active.short_description = 'Current Holiday'
+    active.boolean = True
+
+    def future(self):
+        return timezone.now() > self.end_date
+    future.short_description = 'Future Holiday'
+    future.boolean = True
+
+    def past(self):
+        return timezone.now() < self.start_date
+    past.short_description = 'Past Holiday'
+    past.boolean = True
