@@ -6,9 +6,17 @@
 	</div>
 	<div class="sidecontent">
 		<p>
+		{% if holiday %}
+		Reboot is closed for {{ holiday.name }} from {{ holiday.start_date }} to {{ holiday.end_date }}.
+		{% else %}
 		{% for hour in office_hours %}
+		{% if hour.closed %}
+		{{ hour.get_day }} Closed <br />
+		{% else %}
 		{{ hour.get_day }} {{ hour.start_time|date:"g:i" }}	- {{ hour.end_time|date:"g:i" }}<br />
+		{% endif %}
 		{% endfor %}
+		{% endif %}
 		</p>
 	</div>
 	<div class="sideheader">

@@ -1,7 +1,8 @@
 from machinerequests.models import Request
-from publicreboot.models import OfficeHours
+from publicreboot.models import OfficeHours, Holiday
 from django.views.generic import CreateView, DetailView
 from django.views.generic.base import TemplateView
+from django.utils import timezone
 
 # Create your views here.
 
@@ -25,4 +26,6 @@ class AboutView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(AboutView, self).get_context_data(**kwargs)
         context['office_hours'] = OfficeHours.objects.all()
+        today = timezone.now().date()
+	context['holiday'] = Holiday.objects.filter(end_date__leq=today, start_date__geq=today)
         return context

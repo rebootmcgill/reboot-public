@@ -14,6 +14,7 @@ class OfficeHours(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     day = models.PositiveSmallIntegerField(choices=DAYS, unique=True)
+    closed = models.BooleanField(default=True)
     
     def get_day(self):
         return str(self.DAYS[self.day-1][1])
