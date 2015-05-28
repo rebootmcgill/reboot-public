@@ -1,19 +1,7 @@
 from machinerequests.models import Request
-from publicreboot.models import OfficeHours, Holiday
-from django.views.generic import CreateView, DetailView
-from django.views.generic.base import TemplateView
-from django.utils import timezone
+from django.views.generic import CreateView
 
 # Create your views here.
-
-
-def get_next_holiday():
-    today = timezone.now().date()
-    upcoming = Holiday.objects.filter(start_date__gt=today)
-    if len(upcoming) > 0:
-        return upcoming[0]
-    else:
-        return None
 
 
 class RequestCreate(CreateView):
@@ -23,19 +11,3 @@ class RequestCreate(CreateView):
     fields = ['given_name', 'family_name', 'email', 'requester_type', 'faculty_and_dept', 'organization', 'preset',
         'os', 'machine_use', 'need_display', 'need_mouse', 'need_keyboard', 'need_ethernet', 'extra_information',
         'amount']
-
-
-class RecyclingView(TemplateView):
-    template_name = "publicreboot/recycling.html"
-
-
-class AboutView(DetailView):
-    template_name = "publicreboot/about.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(AboutView, self).get_context_data(**kwargs)
-        context['office_hours'] = OfficeHours.objects.all()
-        today = timezone.now().date()
-        context['holiday'] = Holiday.objects.filter(end_date__gte=today, start_date__lte=today)
-        context['next_holiday'] = get_next_holiday()
-        return context

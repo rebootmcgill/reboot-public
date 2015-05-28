@@ -15,13 +15,13 @@ class OfficeHours(models.Model):
     end_time = models.TimeField()
     day = models.PositiveSmallIntegerField(choices=DAYS, unique=True)
     closed = models.BooleanField(default=True)
-    
+
     def get_day(self):
         return str(self.DAYS[self.day-1][1])
-    
+
     def __str__(self):
         return self.get_day() + ' ' + str(self.start_time) + ' - ' + str(self.end_time)
-    
+
     class Meta:
         ordering = ['day']
 
@@ -49,3 +49,21 @@ class Holiday(models.Model):
         return timezone.now() < self.start_date
     past.short_description = 'Past Holiday'
     past.boolean = True
+
+
+def get_next_holiday():
+    today = timezone.now().date()
+    upcoming = Holiday.objects.filter(start_date__gt=today)
+    if upcoming.count() > 0:
+        return upcoming[0]
+    else:
+        return None
+
+
+def get_current_holiday():
+    today = timezone.now().date()
+    holiday = Holiday.objects.filter(end_date__gte=today, start_date__lte=today)
+    if holiday.count() > 0:
+        return upcoming[0]
+    else:
+        return None
