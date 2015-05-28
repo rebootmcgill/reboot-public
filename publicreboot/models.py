@@ -64,6 +64,6 @@ def get_current_holiday():
     today = timezone.now().date()
     holiday = Holiday.objects.filter(end_date__gte=today, start_date__lte=today)
     if holiday.count() > 0:
-        return upcoming[0]
+        return holiday[0]
     else:
         return None
