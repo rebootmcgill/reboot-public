@@ -7,6 +7,15 @@ from django.utils import timezone
 # Create your views here.
 
 
+def get_next_holiday():
+    today = timezone.now().date()
+    upcoming = Holiday.objects.filter(start_date__gt=today)
+    if len(upcoming) > 0:
+        return upcoming[0]
+    else:
+        return None
+
+
 class RequestCreate(CreateView):
     model = Request
     template_name = "publicreboot/request.html"
@@ -27,5 +36,6 @@ class AboutView(DetailView):
         context = super(AboutView, self).get_context_data(**kwargs)
         context['office_hours'] = OfficeHours.objects.all()
         today = timezone.now().date()
-        context['holiday'] = Holiday.objects.filter(end_date__leq=today, start_date__geq=today)
+        context['holiday'] = Holiday.objects.filter(end_date__gte=today, start_date__lte=today)
+        context['next_holiday'] = get_next_holiday()
         return context

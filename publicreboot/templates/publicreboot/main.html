@@ -17,6 +17,9 @@
 		{% endif %}
 		{% endfor %}
 		{% endif %}
+		{% if next_holiday %}
+		Next closure of Reboot is for {{ next_holiday.name }} from {{ next_holiday.start_date }} to {{ next_holiday.end_date }}.
+		{% endif %}
 		</p>
 	</div>
 	<div class="sideheader">
